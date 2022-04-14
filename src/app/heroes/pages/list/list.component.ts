@@ -19,10 +19,16 @@ export class ListComponent implements OnInit {
   constructor(private heroesService:HeroesService) { }
 
   ngOnInit(): void {
-     this.heroesService.getHeroes().subscribe(resp =>{
-      this.heroes=resp;
-     });
-    //this.heroes=this.heroesService.getHeroes();
+    //Observable
+      this.heroesService.getHeroes().subscribe(resp =>{
+       this.heroes=resp;
+      });
+
+    //promise fetch
+    // this.heroesService.getHeroes()
+    // .then(data =>
+    //   this.heroes=data 
+    // );
   }
 
   

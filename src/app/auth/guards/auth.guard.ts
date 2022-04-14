@@ -15,7 +15,7 @@ export class AuthGuard implements CanLoad,CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-      console.log("bloqueado canActivate");
+      console.log("block canActivate");
       return this.authService.verifyAuth()
         .pipe(
           tap( isAuth => {

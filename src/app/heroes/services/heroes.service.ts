@@ -10,9 +10,18 @@ export class HeroesService {
   private endPoint: string = environment.endPoint;
   constructor( private http: HttpClient) { }
 
+  //FETCH API
+  // getHeroes():Promise<Heroe[]>{
+  //   return fetch(`${this.endPoint}/heroes`)
+  //   .then(response => response.json())
+  //   ;
+  // }
+
+  //angular solution XMLHttpRequest
   getHeroes():Observable<Heroe[]>{
     return this.http.get<Heroe[]>(`${this.endPoint}/heroes`);
   }
+  
   getHeroeById(id:string):Observable<Heroe>{
     return this.http.get<Heroe>(`${this.endPoint}/heroes/${id}`);
   }
